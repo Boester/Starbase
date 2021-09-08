@@ -1,0 +1,10 @@
+IF :SolPan == 1 THEN goto 2 end goto 3
+:TR = :TCR + (:LOH * -1) goto 1
+:TR = 0 goto 1 end
+// SolPan is the Name for the Button
+// If the Button is activated, the Panels start turning
+// If Button is off, Panel turn back to 0 
+// :TR is Turret Rotation, :TCR is current Rotation
+// :LOH is the Light Offset Horizontal from Solar Panel
+// Panels are continously turning towards the sun
+// You need at least one SolarPanel with light sensor
