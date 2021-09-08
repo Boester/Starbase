@@ -1,0 +1,11 @@
+:TotalPropellant=:Propellant1+:Propellant2 //add all Tanks
+:TotalRods=:Rod1+:Rod2+:Rod3+:Rod4+:Rod5 //add all Rods
+FuelTemp = 1500000/:TotalRods FuP = 100 / FuelTemp //Fuel in %
+PropTemp = 8000000/:TotalPropellant PrP = 100 / PropTemp //Prop in %
+:Propellant= "\n"+:TotalPropellant+"\nof\n8000000.000\n-> "+PrP+"%"
+:Fuel= "\n\n"+:TotalRods+"\nof\n1500000.000\n-> "+FuP+"%"  goto1 
+//Text Panel Value is Propellant and Fuel, made for 2 Panels!
+//1500000/8000000 needs to be adjusted to your total full Rods/Propell
+// PrP -> Propellant left in %
+// FuP -> Fuel left in %
+// The Temp Var needed for YOLOL to be able to calculate in 2 Steps 
