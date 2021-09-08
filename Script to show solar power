@@ -1,0 +1,16 @@
+Max = :ATot Act = :AAct All = (100 / Max) * Act
+SP = :SolarPower //actual power income from panels
+MB = 99999 //max battery minus 1 -> adjust to your max BatterStored
+  
+IF :Battery < MB then goto 6 end goto 7 //only sum when Battery not full
+Sum = Sum + SP // sums every second - Line 2 till Line 6 = 1sec
+:Solar = "\nEff:\n"+All+"%\nPower:\n"+SP+"E/s\nSum:\n"+Sum+"E" goto 1
+
+// :Solar is Value for the TextPanel
+// The Display shows actual power income, sum of energy put to batt
+// and the % of used/active panel surface
+// :ATot -> the max surface available (read from converter) 
+// :AAct -> the used surface at the moment (read from converter) 
+// 99999 needs to be adjusted to you max batt minus 1
+// The power only sums if batt not full, so only the power that is 
+// used to load the battery
